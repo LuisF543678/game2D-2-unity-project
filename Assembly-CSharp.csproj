@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Asteroides.cs" />
+     <Compile Include="Assets\Scripts\AutoScroller.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\Nebula.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
