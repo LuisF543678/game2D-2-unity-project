@@ -2,29 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float xMinimum, xMaximum, yMinimum, yMaximun;
+}
+
 public class PlayerController : MonoBehaviour
 {
     public Mover moverComponent;
-    public float speed = 0.7f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed;
+    public Boundary boundary;
 
+    private void Start()
+    {
+        moverComponent.speed = speed;
+    }
+ 
     // Update is called once per frame
     void Update()
     {
-        /* if (Input.GetKey(KeyCode.A)) {
-            transform.Translate(-1f,0,0);
-        }
-        
-        if (Input.GetKey(KeyCode.D)) {
-            transform.Translate(1f,0,0);
-        } */
 
-        Vector3 desplazamiento=new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") *  speed * Time.deltaTime, transform.position.z);
-        moverComponent.DoMove(desplazamiento);
-        //transform.Translate();
+        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 
+        Input.GetAxis("Vertical"), 
+        transform.position.z);
+        moverComponent.direction = direction; 
+
+
+        float x = Mathf.Clamp(transform.position.x, boundary.xMinimum, boundary.xMaximum);
+        float y = Mathf.Clamp(transform.position.y, boundary.yMinimum, boundary.yMaximun);
+        transform.position = new Vector3(x, y);
     }
 }

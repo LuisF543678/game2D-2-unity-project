@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    public void DoMove (Vector3 moveValue)
+    public Vector3 direction;
+    public float speed;
+
+    private void Update() {
+        transform.Translate(direction * speed * Time.deltaTime);
+    }
+
+    /* public void DoMove (Vector3 moveValue)
     {
         transform.Translate(moveValue);
-    }
+    } */
 }
