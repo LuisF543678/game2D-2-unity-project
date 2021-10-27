@@ -14,9 +14,13 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Boundary boundary;
 
-    private void Start()
+    public Transform shootOrigin;
+    public GameObject shootPrefab;
+
+     void Start()
     {
         moverComponent.speed = speed;
+        Debug.Log(speed);
     }
  
     // Update is called once per frame
@@ -32,5 +36,10 @@ public class PlayerController : MonoBehaviour
         float x = Mathf.Clamp(transform.position.x, boundary.xMinimum, boundary.xMaximum);
         float y = Mathf.Clamp(transform.position.y, boundary.yMinimum, boundary.yMaximun);
         transform.position = new Vector3(x, y);
+
+        if (Input.GetButtonDown("shoot"))
+        {
+            Instantiate(shootPrefab, shootOrigin, false);
+        }
     }
 }

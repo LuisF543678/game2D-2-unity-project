@@ -173,6 +173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 988963337}
+  - {fileID: 579839065}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -189,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  speed: 0
+  speed: 8
 --- !u!114 &76982039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,13 +203,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2283fe93b4e293142a7d1275ed10ff3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moverComponent: {fileID: 76982038}
-  speed: 0.7
+  moverComponent: {fileID: 0}
+  speed: 0
   boundary:
     xMinimum: 0
     xMaximum: 0
     yMinimum: 0
     yMaximun: 0
+  shootOrigin: {fileID: 76982037}
+  shootPrefab: {fileID: 76982036}
 --- !u!1 &385568936
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +278,8 @@ MonoBehaviour:
     xMaximum: 0
     yMinimum: 0
     yMaximun: 0
+  shootOrigin: {fileID: 385568937}
+  shootPrefab: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +361,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &579839064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 579839065}
+  m_Layer: 0
+  m_Name: shutOrigen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &579839065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579839064}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0018696785, y: -2.8720512, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 76982037}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588297746
 GameObject:
@@ -457,6 +492,8 @@ MonoBehaviour:
     xMaximum: 0
     yMinimum: 0
     yMaximun: 0
+  shootOrigin: {fileID: 588297747}
+  shootPrefab: {fileID: 0}
 --- !u!114 &588297750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +657,7 @@ GameObject:
   - component: {fileID: 1246793475}
   - component: {fileID: 1246793476}
   - component: {fileID: 1246793477}
+  - component: {fileID: 1246793478}
   m_Layer: 0
   m_Name: idle_player_basic
   m_TagString: Untagged
@@ -708,6 +746,22 @@ MonoBehaviour:
     xMaximum: 0
     yMinimum: 0
     yMaximun: 0
+  shootOrigin: {fileID: 0}
+  shootPrefab: {fileID: 0}
+--- !u!114 &1246793478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246793474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa5e1e485189ca4599d68e982d8a6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 0}
+  speed: 8
 --- !u!1 &1511165982
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,33 +881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd55015539e9e6e4b89bdd378fc6df15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mover: {fileID: 1511165987}
 --- !u!1 &1633097352
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\Nebula.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\speed.cs" />
+     <Compile Include="Assets\Scripts\speed.cs" />
      <None Include="Assets\Textures\Galaxia Sprite Pack #1\README.txt" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>C:/Users/Userr/game-2D-asteroides/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
