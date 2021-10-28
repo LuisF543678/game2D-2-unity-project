@@ -14,16 +14,24 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Boundary boundary;
 
+/*     public InputKeyboardListener asdf;
+ */
+
     public Transform shootOrigin;
     public GameObject shootPrefab;
 
-     void Start()
+    private void Start()
     {
         moverComponent.speed = speed;
-        Debug.Log(speed);
+        //Debug.Log(speed);
+        InputKeyboardListener.Instance.OnHasShoot += OnHasShoot;
+    }
+
+    private void OnHasShoot()
+    {
+        Instantiate(shootPrefab, shootOrigin, false);
     }
  
-    // Update is called once per frame
     void Update()
     {
 
@@ -32,14 +40,14 @@ public class PlayerController : MonoBehaviour
         transform.position.z);
         moverComponent.direction = direction; 
 
-
+ 
         float x = Mathf.Clamp(transform.position.x, boundary.xMinimum, boundary.xMaximum);
         float y = Mathf.Clamp(transform.position.y, boundary.yMinimum, boundary.yMaximun);
         transform.position = new Vector3(x, y);
 
-        if (Input.GetButtonDown("shoot"))
+       /*  if (Input.GetButtonDown("shoot"))
         {
             Instantiate(shootPrefab, shootOrigin, false);
-        }
+        } */
     }
 }

@@ -53,6 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\In.cs" />
+     <Compile Include="Assets\input\IInputeable.cs" />
+     <Compile Include="Assets\input\InputKeyboardListener.cs" />
+     <Compile Include="Assets\input\InputProvider.cs" />
      <Compile Include="Assets\Scripts\AutoScroller.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\Nebula.cs" />
