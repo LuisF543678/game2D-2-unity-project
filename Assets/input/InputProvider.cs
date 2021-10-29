@@ -1,18 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class InputProvider : MonoBehaviour
+﻿public static class InputProvider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public delegate void HaveShoot();
+    public static event HaveShoot OnHasShoot;
+
+    public delegate void HorizontalAxis(float value);
+    public static event HorizontalAxis OnHorizontalAxis;
+
+    public delegate void VerticalAxis(float value);
+    public static event VerticalAxis OnVerticallAxis;
+
+    public static void TriggerOnHasShoot() 
     {
-        
+        OnHasShoot?.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public static void TriggerHorizontalAxis(float value) {
+        OnhorizontalAxis?.Invoke(value);
+    }
+
+    public static void TriggerVerticalAxis(float value) {
+        OnverticalAxis?.Invoke(value);  
     }
 }

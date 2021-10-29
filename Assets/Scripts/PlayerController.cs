@@ -24,8 +24,24 @@ public class PlayerController : MonoBehaviour
     {
         moverComponent.speed = speed;
         //Debug.Log(speed);
-        InputKeyboardListener.Instance.OnHasShoot += OnHasShoot;
+        InputProvider.Instance.OnHasShoot += OnHasShoot;
+        InputProvider.OnHorizontalAxis += OnHorizontalAxis;
+        InputProvider.OnVerticallAxis += onVerticallAxis;
     }
+
+    private void OnhorizontalAxis(float value)
+    {
+        Vector3 direction = new Vector3(value, transform.position.y, transform.position.z); 
+        moverComponent.direction = direction; 
+    }
+
+    private void OnVerticallAxis(float value)
+    {
+        Vector3 direction = new Vector3(transform.position.x, value, transform.position.z); 
+        moverComponent.direction = direction; 
+    }
+
+
 
     private void OnHasShoot()
     {
