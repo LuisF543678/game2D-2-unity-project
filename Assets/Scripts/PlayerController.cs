@@ -25,10 +25,18 @@ public class PlayerController : MonoBehaviour
         moverComponent.speed = speed;
         //Debug.Log(speed);
         InputProvider.Instance.OnHasShoot += OnHasShoot;
-        InputProvider.OnHorizontalAxis += OnHorizontalAxis;
-        InputProvider.OnVerticallAxis += onVerticallAxis;
+        /* InputProvider.OnHorizontalAxis += OnHorizontalAxis;
+        InputProvider.OnVerticallAxis += onVerticallAxis; */
+        InputProvider.OnDireccion += OnDireccion;
     }
 
+    private void OnDireccion(Vector3 direction)
+    {
+        moverComponent.direction = direction; 
+    }
+
+
+/* 
     private void OnhorizontalAxis(float value)
     {
         Vector3 direction = new Vector3(value, transform.position.y, transform.position.z); 
@@ -39,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 direction = new Vector3(transform.position.x, value, transform.position.z); 
         moverComponent.direction = direction; 
-    }
+    } */
 
 
 
@@ -51,12 +59,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 
+        /* Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 
         Input.GetAxis("Vertical"), 
         transform.position.z);
         moverComponent.direction = direction; 
 
- 
+  */
         float x = Mathf.Clamp(transform.position.x, boundary.xMinimum, boundary.xMaximum);
         float y = Mathf.Clamp(transform.position.y, boundary.yMinimum, boundary.yMaximun);
         transform.position = new Vector3(x, y);

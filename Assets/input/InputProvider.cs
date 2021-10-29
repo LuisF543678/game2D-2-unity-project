@@ -1,24 +1,21 @@
-﻿public static class InputProvider : MonoBehaviour
+﻿using unityEngine;
+
+public static class InputProvider : MonoBehaviour
 {
     public delegate void HaveShoot();
     public static event HaveShoot OnHasShoot;
 
-    public delegate void HorizontalAxis(float value);
-    public static event HorizontalAxis OnHorizontalAxis;
-
-    public delegate void VerticalAxis(float value);
-    public static event VerticalAxis OnVerticallAxis;
+    public delegate void direccion(Vector3 direccion);
+    public static event Direccion OnDireccion;
 
     public static void TriggerOnHasShoot() 
     {
         OnHasShoot?.Invoke();
     }
 
-    public static void TriggerHorizontalAxis(float value) {
-        OnhorizontalAxis?.Invoke(value);
+    public static void TriggerDirection(Vector3 direccion) {
+        OnDireccion?.Invoke(direccion);
     }
 
-    public static void TriggerVerticalAxis(float value) {
-        OnverticalAxis?.Invoke(value);  
-    }
+
 }
