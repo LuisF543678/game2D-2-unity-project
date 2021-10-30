@@ -1,10 +1,9 @@
-﻿using unityEngine;
+﻿//using unityEngine;
 
 public static class InputProvider : MonoBehaviour
 {
     public delegate void HaveShoot();
     public static event HaveShoot OnHasShoot;
-
     public delegate void direccion(Vector3 direccion);
     public static event Direccion OnDireccion;
 
