@@ -6,7 +6,6 @@ public class InputKeyboardListener : MonoBehaviour, IInputeable
 {
     public void GetDirection(Vector3 direction)
     {
-        /* throw new System.NotImplementedException(); */
         InputProvider.TriggerDirection(direction);
     }
 
